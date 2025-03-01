@@ -5,26 +5,23 @@
 
 const data = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0.49,0.066,0.066\n3,0.98,0.087,0.080\n4,1.47,0.116,0.108\n5,1.96,0.142,0.138\n6,2.45,0.166,0.158\n7,2.94,0.193,0.174\n8,3.43,0.204,0.192\n9,3.92,0.226,0.205\n10,4.41,0.238,0.232"
 
-let cell1 = ""
-let cell2 = ""
-let cell3 = ""
-let cell4 = ""
+let cells = ["", "", "", ""]
 let commaCount = 0
 // Loop through the characters of a given CSV string.
 for (pos = 0; pos < data.length; pos++) {
   // Store each “cell” of data in a variable.
   if (data[pos] !== ",") {
     if(commaCount === 0) {
-      cell1 += data[pos]
+      cells[0] += data[pos]
     }
     if(commaCount === 1) {
-      cell2 += data[pos]
+      cells[1] += data[pos]
     }
     if(commaCount === 2) {
-      cell3 += data[pos]
+      cells[2] += data[pos]
     }
     if(commaCount === 3) {
-      cell4 += data[pos]
+      cells[3] += data[pos]
     }
   } else {
     // When you encounter a comma, move to the next cell.
@@ -34,11 +31,8 @@ for (pos = 0; pos < data.length; pos++) {
   if (data[pos] === "\n" || pos === data.length - 1) {
     // Log each row of data.
     // You do not need to format the data, the following works well.
-    console.log(cell1, cell2, cell3, cell4)
+    console.log(cells[0], cells[1], cells[2], cells[3])
     commaCount = 0
-    cell1 = ""
-    cell2 = ""
-    cell3 = ""
-    cell4 = ""
+    cells = ["", "", "", ""]
   }
 }
