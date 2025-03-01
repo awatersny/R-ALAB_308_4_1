@@ -7,6 +7,8 @@ const data = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0
 
 let cells = ["", "", "", ""]
 let commaCount = 0
+let rowSeparator = "-------------------------------------------------------------------------------------------"
+console.log(rowSeparator.length)
 // Loop through the characters of a given CSV string.
 for (pos = 0; pos < data.length; pos++) {
   // Store each “cell” of data in a variable.
@@ -20,8 +22,9 @@ for (pos = 0; pos < data.length; pos++) {
     if(commaCount === 2) {
       cells[2] += data[pos]
     }
+    // Add row separator along with line break
     if(commaCount === 3) {
-      cells[3] += data[pos]
+      cells[3] += data[pos] === "\n" ? data[pos] + rowSeparator : data[pos]
     }
   } else {
     // When you encounter a comma, move to the next cell.
@@ -31,7 +34,12 @@ for (pos = 0; pos < data.length; pos++) {
   if (data[pos] === "\n" || pos === data.length - 1) {
     // Log each row of data.
     // You do not need to format the data, the following works well.
-    console.log(cells[0], cells[1], cells[2], cells[3])
+    let row = ""
+    cells.forEach(cell => {
+      let spacing = cell.length > 8 ? "\t\t" : "\t\t\t"
+      row += cell + spacing
+    })
+    console.log(row)
     commaCount = 0
     cells = ["", "", "", ""]
   }
