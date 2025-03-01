@@ -7,8 +7,6 @@ const data = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0
 
 let cells = ["", "", "", ""]
 let commaCount = 0
-let rowSeparator = "-------------------------------------------------------------------------------------------"
-console.log(rowSeparator.length)
 // Loop through the characters of a given CSV string.
 for (pos = 0; pos < data.length; pos++) {
   // Store each “cell” of data in a variable.
@@ -22,9 +20,8 @@ for (pos = 0; pos < data.length; pos++) {
     if(commaCount === 2) {
       cells[2] += data[pos]
     }
-    // Add row separator along with line break
     if(commaCount === 3) {
-      cells[3] += data[pos] === "\n" ? data[pos] + rowSeparator : data[pos]
+      cells[3] += data[pos]
     }
   } else {
     // When you encounter a comma, move to the next cell.
