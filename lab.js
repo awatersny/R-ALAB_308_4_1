@@ -15,17 +15,10 @@ let commaCount = 0
 for (pos = 0; pos < data.length; pos++) {
   // Store each “cell” of data in a variable.
   if (data[pos] !== ",") {
-    if(commaCount === 0) {
-      cells[0] += data[pos]
-    }
-    if(commaCount === 1) {
-      cells[1] += data[pos]
-    }
-    if(commaCount === 2) {
-      cells[2] += data[pos]
-    }
-    if(commaCount === 3) {
-      cells[3] += data[pos]
+    for (let i = 0; i < cells.length; i++) {
+      if(commaCount === i) {
+        cells[i] += data[pos]
+      }
     }
   } else {
     // When you encounter a comma, move to the next cell.
