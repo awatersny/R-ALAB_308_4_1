@@ -71,4 +71,9 @@ for(let i = 0; i < keys.length; i++) {
   toCSV += keys[i] + (i === keys.length - 1 ? "\n" : ",")
 }
 
+for(let i = 1; i < objTable.length; i++) {
+  let values = Object.values(objTable[i])
+  console.log(values)
+}
+
 console.log(toCSV)
