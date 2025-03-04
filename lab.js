@@ -30,11 +30,7 @@ for (pos = 0; pos < data.length; pos++) {
   // When you encounter the “\r\n” sequence, move to the next “row.”
   if (data[pos] === "\n" || pos === data.length - 1) {
     // Store your results in a two-dimensional array.
-    let row = []
-    cells.forEach(cell => {
-      row.push(cell)
-    })
-    table.push(row)
+    table.push([...cells])
     commaCount = 0
     for(let i = 0; i < cells.length; i++) {
       cells[i] = ""
