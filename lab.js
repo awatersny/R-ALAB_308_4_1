@@ -53,4 +53,15 @@ for(let i = 1; i < table.length; i++) {
   objTable.push(fieldObj)
 }
 
+// Remove the last element from the sorted array.
+objTable.pop()
+// Insert the following object at index 1:
+// { id: "48", name: "Barry", occupation: "Runner", age: "25" }
+tempObj = objTable.shift()
+objTable.unshift({ id: "48", name: "Barry", occupation: "Runner", age: "25" })
+objTable.unshift(tempObj)
+// Add the following object to the end of the array:
+// { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+objTable.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
+
 console.log(objTable)
