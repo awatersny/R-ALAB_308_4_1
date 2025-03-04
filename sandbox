@@ -1,0 +1,9 @@
+let nums = [1, 2, 3, 4, 5]
+
+let arrs = []
+
+for(let i = 0; i < 5; i++){
+  arrs.push(nums)
+}
+
+console.log(arrs)
