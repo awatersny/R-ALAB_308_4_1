@@ -48,7 +48,7 @@ const objTable = []
 for(let i = 1; i < table.length; i++) {
   let fieldObj = {}
   for(let j = 0; j < table[i].length; j++) {
-    fieldObj[table[0][j]] = table[i][j]
+    fieldObj[table[0][j].toLowerCase()] = table[i][j]
   }
   objTable.push(fieldObj)
 }
