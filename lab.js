@@ -62,6 +62,15 @@ objTable.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
 
 console.log(objTable)
 
+let sumAge = 0
+objTable.forEach(obj => {
+  sumAge += parseInt(obj.age)
+})
+
+let avgAge = sumAge / objTable.length
+
+console.log(avgAge)
+
 let keys = Object.keys(objTable[0])
 
 let toCSV = ""
