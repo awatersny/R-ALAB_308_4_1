@@ -61,3 +61,14 @@ objTable.unshift(objTable.pop())
 objTable.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" })
 
 console.log(objTable)
+
+let keys = Object.keys(objTable[0])
+
+let toCSV = ""
+// "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
+for(let i = 0; i < keys.length; i++) {
+  keys[i] = keys[i].replace(keys[i][0], keys[i][0].toUpperCase())
+  toCSV += keys[i] + (i === keys.length - 1 ? "\n" : ",")
+}
+
+console.log(toCSV)
