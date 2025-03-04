@@ -7,7 +7,6 @@ const data = "Index,Mass (kg),Spring 1 (m),Spring 2 (m)\n1,0.00,0.050,0.050\n2,0
 
 const cells = []
 const table = []
-const objTable = []
 cells.length = 4
 for(let i = 0; i < cells.length; i++) {
   cells[i] = ""
@@ -45,7 +44,10 @@ for (pos = 0; pos < data.length; pos++) {
 
 // console.log(table)
 
-for(let i = 1; i < table.length; i++){
+const objTable = []
+for(let i = 1; i < table.length; i++) {
   let fieldObj = {}
-  console.log(table[i])
+  for(let j = 0; j < table[i].length; j++) {
+    console.log(table[0][j], table[i][j])
+  }
 }
