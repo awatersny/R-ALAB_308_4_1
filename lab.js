@@ -73,7 +73,10 @@ for(let i = 0; i < keys.length; i++) {
 
 for(let i = 1; i < objTable.length; i++) {
   let values = Object.values(objTable[i])
-  console.log(values)
+  values.forEach((value, index) => {
+    toCSV += value + (index === values.length - 1 ? "\n" : ",")
+
+  })
 }
 
 console.log(toCSV)
