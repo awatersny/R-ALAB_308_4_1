@@ -42,12 +42,15 @@ for (pos = 0; pos < data.length; pos++) {
   }
 }
 
-// console.log(table)
+console.log(table)
 
 const objTable = []
 for(let i = 1; i < table.length; i++) {
   let fieldObj = {}
   for(let j = 0; j < table[i].length; j++) {
-    console.log(table[0][j], table[i][j])
+    fieldObj[table[0][j]] = table[i][j]
   }
+  objTable.push(fieldObj)
 }
+
+console.log(objTable)
